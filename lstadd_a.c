@@ -6,7 +6,7 @@
 /*   By: kyoshida <kyoshida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 17:17:45 by kyoshida          #+#    #+#             */
-/*   Updated: 2023/08/01 14:16:40 by kyoshida         ###   ########.fr       */
+/*   Updated: 2023/08/01 20:29:52 by kyoshida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ static int	jud_argc(int flag, int argc, char **argv, t_list **stack)
 {
 	if (flag == 1)
 		argv_free(argv, argc);
+	if (argc == 1)
+		return (0);
 	if (num_press(stack) == 1)
 		return (1);
 	return (0);
