@@ -6,7 +6,7 @@
 /*   By: yoshidakazushi <yoshidakazushi@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 12:45:15 by kyoshida          #+#    #+#             */
-/*   Updated: 2023/07/22 14:22:43 by yoshidakazu      ###   ########.fr       */
+/*   Updated: 2023/08/01 23:21:30 by yoshidakazu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,8 @@ char	**ft_split(char const *s, char c)
 {
 	char	**ans;
 	int		len;
-
+	if(str_undigit((char *)s) == 1 || ft_strlen(s) == 0)
+	return NULL;
 	len = ft_wordcount(s, c);
 	ans = (char **)malloc(sizeof(char *) * (len + 1));
 	if (ans == NULL)

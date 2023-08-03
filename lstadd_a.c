@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lstadd_a.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoshida <kyoshida@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yoshidakazushi <yoshidakazushi@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 17:17:45 by kyoshida          #+#    #+#             */
-/*   Updated: 2023/08/01 20:29:52 by kyoshida         ###   ########.fr       */
+/*   Updated: 2023/08/01 23:20:34 by yoshidakazu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int	new_last(char *addstr, t_list **stack, int order)
 	if (str_undigit(addstr) == 1)
 		return (1);
 	convert_d = ft_atoi_swap(addstr);
-	if (convert_d > INT_MAX || convert_d < INT_MIN)
+	if (convert_d == LONG_MAX || convert_d == LONG_MIN)
 		return (1);
 	if ((*stack)->data == 0 && (order == 1 || order == 0))
 	{
