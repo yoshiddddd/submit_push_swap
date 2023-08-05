@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi2.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoshidakazushi <yoshidakazushi@student.    +#+  +:+       +#+        */
+/*   By: kyoshida <kyoshida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 13:14:50 by kyoshida          #+#    #+#             */
-/*   Updated: 2023/08/02 22:29:35 by yoshidakazu      ###   ########.fr       */
+/*   Updated: 2023/08/06 04:16:30 by kyoshida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ static long	ft_parsenumber(const char *str, int flag)
 	long	num;
 
 	num = 0;
-	
 	while ('0' <= *str && *str <= '9')
 	{
 		if (num > INT_MAX / 10 && flag == 1)

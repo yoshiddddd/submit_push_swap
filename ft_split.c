@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoshidakazushi <yoshidakazushi@student.    +#+  +:+       +#+        */
+/*   By: kyoshida <kyoshida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 12:45:15 by kyoshida          #+#    #+#             */
-/*   Updated: 2023/08/01 23:21:30 by yoshidakazu      ###   ########.fr       */
+/*   Updated: 2023/08/06 04:15:49 by kyoshida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,12 +68,25 @@ static int	ft_checkword(char **ans, char const *s, char c)
 	return (0);
 }
 
+static int	str_isspace(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] == ' ')
+		i++;
+	if (i == (int)ft_strlen(str))
+		return (1);
+	return (0);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**ans;
 	int		len;
-	if(str_undigit((char *)s) == 1 || ft_strlen(s) == 0)
-	return NULL;
+
+	if (str_isspace((char *)s) == 1 || ft_strlen(s) == 0)
+		return (NULL);
 	len = ft_wordcount(s, c);
 	ans = (char **)malloc(sizeof(char *) * (len + 1));
 	if (ans == NULL)
